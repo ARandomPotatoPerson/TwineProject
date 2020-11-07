@@ -11,18 +11,56 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Implementing Among Us" startnode="1" creator="Twine" creator-version="2.3.9" ifid="B3A15DF3-AFC9-4B37-823C-8AF080EF8D57" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar
+<tw-storydata name="Implementing Among Us" startnode="1" creator="Twine" creator-version="2.3.9" ifid="B3A15DF3-AFC9-4B37-823C-8AF080EF8D57" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar
 {
 display: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Game Start" tags="Variable-Initialization Title" position="400,25" size="100,100">GENERIC TITLE PAGE
-[[&quot;Start Game&quot; -&gt; CreateChar]]
+}
+
+tw-link {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+tw-link, .enchantment-link {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.notAvail {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+.Avail {
+  color: inherit;
+  font-weight: bold;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Game Start" tags="Variable-Initialization Title" position="898.3333333333334,56.66666666666667" size="100,100">GENERIC TITLE PAGE
+Current Testing Features:
+	Implementation of NPC Colored text
+	Prepreparation for Imaging spacing (Don&#39;t question this)
+
+[[&quot;Start Game&quot; -&gt; Introduction]]
 (set: $playerName to &quot;&quot;) 
-(set: $npcsAlive to (array: 1, 1, 1)) 
-(set: $npc1 to &quot;NPC1&quot;) 
-(set: $npc2 to &quot;NPC2&quot;) 
-(set: $npc3 to &quot;NPC3&quot;)
+(set: $npcsTrust to (array: 50, 50, 50)) 
+&lt;!-- Explaining npcTrust:
+	NPCTrust will track how much each NPC trusts each player
+	An NPCTrust of 50 means that your trust has not developed or gone backwards
+	A x&gt;50 NPCTrust will cause the NPC to trust the player more
+	A x&lt;50 NPCTrust will cause the NPC to trust player less
+	A x &lt; 0 NPCTrust means that the NPC is now dead
+--&gt;
+(set: $npc1 to &quot;Parker&quot;) 
+(set: $npc2 to &quot;Scarlett&quot;) 
+(set: $npc3 to &quot;Cain&quot;)
+&lt;!-- Names. NPC3 is the bad guy who dies--&gt;
+(set: $tasksDone to (array: 0, 0, 0))
+&lt;!-- I don&#39;t feel like explaning this --&gt;
 (set: $timer1 to 10)
-&lt;!-- 1 Means NPC is alive --&gt;
+&lt;!-- Timer1 is just a timer--&gt;
+
 
 &lt;!-- Testing Results:
 Every line break is registered, even if nothing exists
@@ -39,16 +77,42 @@ Why Link Arrows are gone
 	Because only [[]] is supported because haha
 	Why is [[]] so unforgiving with new passages of same name?
 Looping?
---&gt;</tw-passagedata><tw-passagedata pid="2" name=" GettingWater" tags="" position="250,150" size="100,100">[[ALl Clear -&gt; HomeBase1]]</tw-passagedata><tw-passagedata pid="3" name=" CreateChar" tags="" position="400,150" size="100,100">(set: $playerName to (prompt: &quot;Insert Name: &quot;, &quot;Testing&quot;))
-[[Get Water? -&gt; GettingWater]]
-[[Get Food? -&gt; GettingFood]]</tw-passagedata><tw-passagedata pid="4" name=" GettingFood" tags="" position="550,150" size="100,100">[[Split Up? -&gt; Death]]
-[[No Split Up? -&gt; HomeBase1]]</tw-passagedata><tw-passagedata pid="5" name=" HomeBase1" tags="" position="400,375" size="100,100">Some Kind of Meeting
+--&gt;</tw-passagedata><tw-passagedata pid="2" name=" GettingWater" tags="Todo" position="756,512.6666666666666" size="100,100">You and $npc1 stumble around Atlanta for hours looking for any source of freshwater. Having found nothing you both decide to [[go to the old location.-&gt; oldLocation]]
+
+&lt;!-- $npc1 can and might be changed later --&gt;</tw-passagedata><tw-passagedata pid="3" name=" GettingFood" tags="" position="1080.6666666666667,507.66666666666663" size="100,100">[[Split Up? -&gt; Death]]
+[[No Split Up? -&gt;HomeBase1]]</tw-passagedata><tw-passagedata pid="4" name="HomeBase1" tags="" position="916.3333333333334,974.6666666666666" size="100,100">Some Kind of Meeting
 TimerTest: Time left: $timer1(live: 1s)[
 	(set: $timer1 to ($timer1 - 1)) 
-	(if: $timer1 is 0)[(go-to: &quot;Day 2&quot;)]
+	(if: $timer1 is 0)[(go-to: &quot;TaskPage&quot;)]
 	(replace: (text: ($timer1 + 1)))[$timer1]
-]</tw-passagedata><tw-passagedata pid="6" name=" Death" tags="" position="775,150" size="100,100">You Die.
-The End.</tw-passagedata><tw-passagedata pid="7" name="Day 2" tags="" position="400,525" size="100,100">Woohoo</tw-passagedata></tw-storydata>
+]</tw-passagedata><tw-passagedata pid="5" name=" Death" tags="" position="1238.0000000000002,409.99999999999994" size="100,100">You Die.
+The End.</tw-passagedata><tw-passagedata pid="6" name=" oldLocation" tags="" position="590,380.6666666666667" size="100,100">You walk with $npc1 to the broken waterline about a mile away. Along the way the two of you talk about your lives before the war.
+(set: $tasksDone&#39;s 1st to 1) (set: $npcsTrust&#39;s 1st to 60)
+(click: &quot;you talk about your lives before the war&quot;)[
+	(replace: &quot;You walk with &quot; + $npc1 + &quot; to the broken waterline about a mile away. Along the way the two of you talk about your lives before the war.&quot;)[(t8n: &quot;dissolve&quot;)+(colour: red)[&quot;I was in the AI development team at Google. Not the ones who started working on the bots that are trying to kill, but small things. AI in your cars, fridge, etc. I had just gotten married before the war… I miss &lt;br&gt;her...&quot; - $npc1] (t8n: &quot;dissolve&quot;)[&lt;br&gt;&lt;br&gt;You mention how you can relate as your family also died in the initial outbreaks of the war. &lt;span class=&#39;sadge&#39;&gt;[[You get lost in conversation about the past...-&gt; arrivedOldLocation]]&lt;/span&gt;]]
+]</tw-passagedata><tw-passagedata pid="7" name="ChangeList" tags="" position="743.3333333333334,58.66666666666667" size="100,100">Day1 - GettingWater needs to have NPC updated in entire chain
+Images need implementation
+Images?</tw-passagedata><tw-passagedata pid="8" name=" arrivedOldLocation" tags="" position="445.00000000000006,302.99999999999994" size="100,100">Seeing the building where the broken waterline is, you refocus your thoughts. $npc1 and you slow down to a crawl, and silently approach the building. Peering inside you  notice the path is clear and head to the basement where the line is. $npc1 goes down first. You follow and fill up the pouches you have both been carrying. [[You leave without an issue and return to the base. -&gt;HomeBase1]]</tw-passagedata><tw-passagedata pid="9" name=" Introduction" tags="" position="897.3333333333334,188.66666666666666" size="100,100">The year is 2070, and a once vibrant Earth has been reduced to a despondent, lifeless wasteland after five years of brutal and bloody warfare. Nobody had predicted the AIs were plotting a secret uprising, and it was only with great sacrifice and desperation that humanity was able to salvage a victory. Now, reduced to the Stone Age in the ruins of a once proud city in the Southern United States, humanity relies on you and your three friends’ survival in order to restart civilization. 
+
+There’s just one catch––the AIs are still out there. And you suspect one has infiltrated your group.
+
+[[Continue]]
+</tw-passagedata><tw-passagedata pid="10" name="Continue" tags="" position="904.3333333333334,383.33333333333337" size="100,100">Unfortunately, there’s no time right now to think about your suspicions. Living out of an abandoned MARTA station, survival is clearly the number one priority, and your group has decided to split into smaller groups of two to complete essential tasks. It makes you slightly nervous that you must be left alone with someone else, but you know that this is the only plan that makes sense, so you go along with it. As the de-facto leader of the group, your friends look to you for your decision on [[which task you’d prefer to do.-&gt;TaskPage]]</tw-passagedata><tw-passagedata pid="11" name="TaskPage" tags="Todo" position="901.0000000000001,668.3333333333333" size="100,100">Something Something Title 
+
+* Collect Water 
+* Collect Food
+* Getting Survival Supplies
+* Just raid someone lmao
+
+(if: $tasksDone&#39;s 1st is 1)[(replace: &quot;Collect Water&quot;)[~~Collect Water~~]]
+(if: $tasksDone&#39;s 2nd is 1)[(replace: &quot;Collect Food&quot;)[~~Collect Food~~]]
+(if: $tasksDone&#39;s 3rd is 1)[(replace: &quot;Getting Survival Supplies&quot;)[~~Getting Survival Supplies~~]]
+
+(click: &quot;Collect Water&quot;) [(if: $tasksDone&#39;s 1st is 0)[(go-to: &quot; GettingWater&quot;)]]
+(click: &quot;Collect Food&quot;) [(if: $tasksDone&#39;s 2nd is 0)[(go-to: &quot; GettingFood&quot;)]]
+
+&lt;!-- Shitty ass 1st Click When Not Avail Nonsense --&gt;
+&lt;!-- This is why Depression Quest just used a clickable span isn&#39;t it --&gt;</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
