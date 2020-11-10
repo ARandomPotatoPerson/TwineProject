@@ -37,14 +37,13 @@ tw-link, .enchantment-link {
 .Avail {
   color: inherit;
   font-weight: bold;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Game Start" tags="Variable-Initialization Title" position="898.3333333333334,56.66666666666667" size="100,100">GENERIC TITLE PAGE
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Game Start" tags="Variable-Initialization Title" position="898,56" size="100,100">GENERIC TITLE PAGE
 Current Testing Features:
 	Implementation of NPC Colored text
-	Prepreparation for Imaging spacing (Don&#39;t question this)
 
 [[&quot;Start Game&quot; -&gt; Introduction]]
 (set: $playerName to &quot;&quot;) 
-(set: $npcsTrust to (array: 50, 50, 50)) 
+(set: $npcsTrust to (array: 2, 2, 2)) 
 &lt;!-- Explaining npcTrust:
 	NPCTrust will track how much each NPC trusts each player
 	An NPCTrust of 50 means that your trust has not developed or gone backwards
@@ -56,7 +55,7 @@ Current Testing Features:
 (set: $npc2 to &quot;Scarlett&quot;) 
 (set: $npc3 to &quot;Cain&quot;)
 &lt;!-- Names. NPC3 is the bad guy who dies--&gt;
-(set: $tasksDone to (array: 0, 0, 0))
+(set: $tasksDone to (array: 0, 0, 0, 0))
 &lt;!-- I don&#39;t feel like explaning this --&gt;
 (set: $timer1 to 10)
 &lt;!-- Timer1 is just a timer--&gt;
@@ -77,42 +76,157 @@ Why Link Arrows are gone
 	Because only [[]] is supported because haha
 	Why is [[]] so unforgiving with new passages of same name?
 Looping?
---&gt;</tw-passagedata><tw-passagedata pid="2" name=" GettingWater" tags="Todo" position="756,512.6666666666666" size="100,100">You and $npc1 stumble around Atlanta for hours looking for any source of freshwater. Having found nothing you both decide to [[go to the old location.-&gt; oldLocation]]
+--&gt;</tw-passagedata><tw-passagedata pid="2" name=" GettingWater" tags="Todo" position="331,257" size="100,100">You leave the camp with $npc1 to head to the broken water line. As you step out of the camp, $npc1 asks you, “Should we try to find a new source or go to the old waterline?”
 
-&lt;!-- $npc1 can and might be changed later --&gt;</tw-passagedata><tw-passagedata pid="3" name=" GettingFood" tags="" position="1080.6666666666667,507.66666666666663" size="100,100">[[Split Up? -&gt; Death]]
-[[No Split Up? -&gt;HomeBase1]]</tw-passagedata><tw-passagedata pid="4" name="HomeBase1" tags="" position="916.3333333333334,974.6666666666666" size="100,100">Some Kind of Meeting
+You know you’ve been getting water from the same place for a couple weeks now and it might be risky with the AI pursuing you to keep heading to the same locations.
+
+[[Find new water source]]
+[[Go to old location-&gt; oldLocation]] 
+
+&lt;!-- $npc1 can and might be changed later --&gt;</tw-passagedata><tw-passagedata pid="3" name=" GettingFood" tags="" position="1246.666666666667,500.3333333333333" size="100,100">[[Split Up? -&gt; Death]]
+[[No Split Up? -&gt;TaskPage]]</tw-passagedata><tw-passagedata pid="4" name="HomeBase1" tags="" position="54.333333333333265,160.83333333333337" size="100,100">Some Kind of Meeting
 TimerTest: Time left: $timer1(live: 1s)[
 	(set: $timer1 to ($timer1 - 1)) 
 	(if: $timer1 is 0)[(go-to: &quot;TaskPage&quot;)]
 	(replace: (text: ($timer1 + 1)))[$timer1]
-]</tw-passagedata><tw-passagedata pid="5" name=" Death" tags="" position="1238.0000000000002,409.99999999999994" size="100,100">You Die.
-The End.</tw-passagedata><tw-passagedata pid="6" name=" oldLocation" tags="" position="590,380.6666666666667" size="100,100">You walk with $npc1 to the broken waterline about a mile away. Along the way the two of you talk about your lives before the war.
-(set: $tasksDone&#39;s 1st to 1) (set: $npcsTrust&#39;s 1st to 60)
+]</tw-passagedata><tw-passagedata pid="5" name=" Death" tags="" position="1419.6666666666665,520.6666666666667" size="100,100">You Die.
+The End.</tw-passagedata><tw-passagedata pid="6" name=" oldLocation" tags="" position="486.66666666666663,421.6666666666667" size="100,100">You walk with $npc1 to the broken waterline about a mile away. Along the way the two of you talk about your lives before the war.
+(set: $tasksDone&#39;s 1st to 1) (set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st + 1))
 (click: &quot;you talk about your lives before the war&quot;)[
 	(replace: &quot;You walk with &quot; + $npc1 + &quot; to the broken waterline about a mile away. Along the way the two of you talk about your lives before the war.&quot;)[(t8n: &quot;dissolve&quot;)+(colour: red)[&quot;I was in the AI development team at Google. Not the ones who started working on the bots that are trying to kill, but small things. AI in your cars, fridge, etc. I had just gotten married before the war… I miss &lt;br&gt;her...&quot; - $npc1] (t8n: &quot;dissolve&quot;)[&lt;br&gt;&lt;br&gt;You mention how you can relate as your family also died in the initial outbreaks of the war. &lt;span class=&#39;sadge&#39;&gt;[[You get lost in conversation about the past...-&gt; arrivedOldLocation]]&lt;/span&gt;]]
-]</tw-passagedata><tw-passagedata pid="7" name="ChangeList" tags="" position="743.3333333333334,58.66666666666667" size="100,100">Day1 - GettingWater needs to have NPC updated in entire chain
+]</tw-passagedata><tw-passagedata pid="7" name="ChangeList" tags="" position="741.3333333333334,58" size="100,100">Day1 - GettingWater needs to have NPC updated in entire chain
 Images need implementation
-Images?</tw-passagedata><tw-passagedata pid="8" name=" arrivedOldLocation" tags="" position="445.00000000000006,302.99999999999994" size="100,100">Seeing the building where the broken waterline is, you refocus your thoughts. $npc1 and you slow down to a crawl, and silently approach the building. Peering inside you  notice the path is clear and head to the basement where the line is. $npc1 goes down first. You follow and fill up the pouches you have both been carrying. [[You leave without an issue and return to the base. -&gt;HomeBase1]]</tw-passagedata><tw-passagedata pid="9" name=" Introduction" tags="" position="897.3333333333334,188.66666666666666" size="100,100">The year is 2070, and a once vibrant Earth has been reduced to a despondent, lifeless wasteland after five years of brutal and bloody warfare. Nobody had predicted the AIs were plotting a secret uprising, and it was only with great sacrifice and desperation that humanity was able to salvage a victory. Now, reduced to the Stone Age in the ruins of a once proud city in the Southern United States, humanity relies on you and your three friends’ survival in order to restart civilization. 
+Images?
+Raid9/10/12b, him/her error
+Raid 12a/13: Death message nonexistant atm</tw-passagedata><tw-passagedata pid="8" name=" arrivedOldLocation" tags="" position="320,588.6666666666666" size="100,100">Seeing the building where the broken waterline is, you refocus your thoughts. $npc1 and you slow down to a crawl, and silently approach the building. Peering inside you  notice the path is clear and head to the basement where the line is. $npc1 goes down first. You follow and fill up the pouches you have both been carrying. [[You leave without an issue and return to the base. -&gt;TaskPage]]</tw-passagedata><tw-passagedata pid="9" name=" Introduction" tags="" position="897,188" size="100,100">The year is 2070, and a once vibrant Earth has been reduced to a despondent, lifeless wasteland after five years of brutal and bloody warfare. Nobody had predicted the AIs were plotting a secret uprising, and it was only with great sacrifice and desperation that humanity was able to salvage a victory. Now, reduced to the Stone Age in the ruins of a once proud city in the Southern United States, humanity relies on you and your three friends’ survival in order to restart civilization. 
 
 There’s just one catch––the AIs are still out there. And you suspect one has infiltrated your group.
 
 [[Continue]]
-</tw-passagedata><tw-passagedata pid="10" name="Continue" tags="" position="904.3333333333334,383.33333333333337" size="100,100">Unfortunately, there’s no time right now to think about your suspicions. Living out of an abandoned MARTA station, survival is clearly the number one priority, and your group has decided to split into smaller groups of two to complete essential tasks. It makes you slightly nervous that you must be left alone with someone else, but you know that this is the only plan that makes sense, so you go along with it. As the de-facto leader of the group, your friends look to you for your decision on [[which task you’d prefer to do.-&gt;TaskPage]]</tw-passagedata><tw-passagedata pid="11" name="TaskPage" tags="Todo" position="901.0000000000001,668.3333333333333" size="100,100">Something Something Title 
-
+</tw-passagedata><tw-passagedata pid="10" name="Continue" tags="" position="904,383" size="100,100">Unfortunately, there’s no time right now to think about your suspicions. Living out of an abandoned MARTA station, survival is clearly the number one priority, and your group has decided to split into smaller groups of two to complete essential tasks. It makes you slightly nervous that you must be left alone with someone else, but you know that this is the only plan that makes sense, so you go along with it. As the de-facto leader of the group, your friends look to you for your decision on [[which task you’d prefer to do.-&gt;TaskPage]]</tw-passagedata><tw-passagedata pid="11" name="TaskPage" tags="Todo" position="914.3333333333334,563" size="100,100">Something Something Title 
+(text-style: &quot;bold&quot;)[
 * Collect Water 
-* Collect Food
-* Getting Survival Supplies
-* Just raid someone lmao
+* Collect Food 
+* Getting Survival Supplies 
+* Raid 
+]
+(if: $tasksDone&#39;s 1st is 1)[(replace: &quot;Collect Water &quot;)[~~Collect Water~~]]
+(if: $tasksDone&#39;s 2nd is 1)[(replace: &quot;Collect Food &quot;)[~~Collect Food~~]]
+(if: $tasksDone&#39;s 3rd is 1)[(replace: &quot;Getting Survival Supplies &quot;)[~~Getting Survival Supplies~~]]
+(if: $tasksDone&#39;s 4th is 1)[(replace: &quot;Raid &quot;)[~~Raid~~]]
 
-(if: $tasksDone&#39;s 1st is 1)[(replace: &quot;Collect Water&quot;)[~~Collect Water~~]]
-(if: $tasksDone&#39;s 2nd is 1)[(replace: &quot;Collect Food&quot;)[~~Collect Food~~]]
-(if: $tasksDone&#39;s 3rd is 1)[(replace: &quot;Getting Survival Supplies&quot;)[~~Getting Survival Supplies~~]]
-
-(click: &quot;Collect Water&quot;) [(if: $tasksDone&#39;s 1st is 0)[(go-to: &quot; GettingWater&quot;)]]
-(click: &quot;Collect Food&quot;) [(if: $tasksDone&#39;s 2nd is 0)[(go-to: &quot; GettingFood&quot;)]]
+(click: &quot;Collect Water &quot;) [(if: $tasksDone&#39;s 1st is 0)[(go-to: &quot; GettingWater&quot;)]]
+(click: &quot;Collect Food &quot;) [(if: $tasksDone&#39;s 2nd is 0)[(go-to: &quot; GettingFood&quot;)]]
+(click: &quot;Raid &quot;) [(if: $tasksDone&#39;s 4th is 0)[(go-to: &quot;Raid&quot;)]]
 
 &lt;!-- Shitty ass 1st Click When Not Avail Nonsense --&gt;
-&lt;!-- This is why Depression Quest just used a clickable span isn&#39;t it --&gt;</tw-passagedata></tw-storydata>
+&lt;!-- This is why Depression Quest just used a clickable span isn&#39;t it --&gt;</tw-passagedata><tw-passagedata pid="12" name="Find new water source" tags="" position="241,420.3333333333333" size="100,100">You and $npc1 stumble around Atlanta for hours looking for any source of freshwater. Having found nothing you both decide to [[go to the old location-&gt; oldLocation]].
+</tw-passagedata><tw-passagedata pid="13" name="The Useless Pages Corner" tags="" position="55.99999999999992,45.83333333333337" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name="Raid" tags="ToDo" position="460,805.8333333333334" size="100,100">The sun is just rising over the horizon, you aren’t sure if raiding the base right now is a smart idea.
+
+
+Proceed with the mission.
+Wait till it’s darker. 
+
+&lt;!-- raidFlag true means went during day --&gt;
+
+(set: $npcRaid to $npc1)
+(set: $npcNum to 1) &lt;!-- What to do here for a inputted val... --&gt;
+(set: $raidColor to red) &lt;!-- Change this later maybe --&gt;
+(set: $map to 0)
+
+(click: &quot;Wait till it’s darker.&quot;)[
+	(set: $raidFlag to false)
+	(go-to: &quot;Raid2&quot;)
+]
+(click: &quot;Proceed with the mission&quot;)[
+	(set: $raidFlag to true)
+	(go-to: &quot;Raid2&quot;)
+]</tw-passagedata><tw-passagedata pid="15" name="Raid2" tags="" position="456.6666666666667,938" size="100,100">&lt;!-- Who tf is the character tho and why is it always guy 1--&gt;
+
+Leaving the base with $npcRaid, the two of you begin walking towards the old police station where the AI are stockpiling weapons. The bags you both brough to store the weapons in are slung over your shoulders.
+
+As you get closer to the base you feel a sense of unease. Sweat forms on your forehead and you have to focus to stop your legs from trembling. You know you feel nervous but you feel as though there is something else but you just can’t quite put your finger on what it is.
+
+(colour: $raidColor)[“We’re about 5 minutes out,”] $npcRaid says, (colour: $raidColor)[“You feeling okay?]
+&lt;!-- Color might have to change lmao --&gt;
+
+[[“Yeah, I’m just nervous, that’s all.”-&gt;Raid3a]]
+[[“I’m a little nervous, and something feels off to me.”-&gt;Raid3b]]</tw-passagedata><tw-passagedata pid="16" name="Raid3a" tags="" position="360,1050.8333333333333" size="100,100">(colour: $raidColor)[[[“Alright then, lets keep going.”-&gt;Raid5a]]]</tw-passagedata><tw-passagedata pid="17" name="Raid3b" tags="" position="536.6666666666667,1054.1666666666667" size="100,100">(color: $raidColor)[“What’s going on?”] $npcRaid asks.
+“I feel as though I forgot something,” you say. 
+(color: $raidColor)[“Hopefully it wasn’t important, we’re almost at the police station and I don’t want to walk back to our camp and then make another trip here.”]
+“I can’t remember if it was important or not, I just don’t feel good that’s all.
+(color: $raidColor)[“Ugh,” $npcRaid sighs. “If you really feel so bad we can go back, I don’t want you choking on this mission and getting us both killed. If it turns out it’s nothing though I’ll be upset.”]
+
+[[Return back to camp to get something.-&gt;Raid4]]
+[[Continue with the mission.-&gt;Raid5a]]
+</tw-passagedata><tw-passagedata pid="18" name="Raid5a" tags="" position="449.99999999999994,1400.8333333333333" size="100,100">Time passes and you arrive at the police station with $npcRaid. It’s dark outside. Sneaking around to the back of the building you crouch behind a [[broken generator-&gt;Raid5b]] and see the backdoor to the station. $npcRaid’s scouting the day prior let them figure out the combination, so you know you can get inside if you make it to the door. 
+
+Leaving the shelter of the generator you cross the empty parking lot towards the back door, under the cover of night as you reach the door changes based on night or day. $npcRaid and pops the lock open, and gently nudges the door. It slides open without a sound and you (link: &quot;peer inside.&quot;)[(t8n: &quot;dissolve&quot;)[&lt;br&gt;&lt;br&gt;It’s dark and a long hallway greets you. Padding softly down it, you can barely hear your or $npcRaid’s footsteps. At the end, the hallway splits into two paths.]]
+
+(click: &quot;splits into two paths.&quot;) [
+	(if: $map is 1)[(go-to: &quot;Raid6a&quot;)]
+	(go-to: &quot;Raid6b&quot;)
+]
+
+(if: $raidFlag is true)[
+	(replace: &quot;dark&quot;)[bright]
+	(replace: &quot;under the cover of night&quot;)[hoping no one sees you]
+]</tw-passagedata><tw-passagedata pid="19" name="Raid4" tags="" position="610.0000000000001,1227.5" size="100,100">Visibility upset, $npcRaid sighs out, (color: $raidColor)[“Fine… we can go back. Better be worth it.”]
+(set: $npcTemp to &quot;Some other character&quot;)
+The two of you turn around and make your way back to the camp. Once there you find your bag and reach inside, it’s a (link: &quot;map&quot;)[ with blueprints of the police station. $npcTemp found it a couple days ago. It could prove invaluable in your mission today. “Good thing you grabbed it,” you think to yourself(set: $map to 1)].
+
+You exit the camp and begin the trek back to the police station. (color: $raidColor)[“Got everything now?”] $npcRaid
+
+[[“Yeah, let&#39;s finish this job.”-&gt;Raid5a]]</tw-passagedata><tw-passagedata pid="20" name="Raid5b" tags="" position="289.99999999999994,1402.5" size="100,100">With all the electrical lines being destroyed in the war, you know that since the generator here is broken, the police station has no power, which means no lights or security cameras to worry about…
+
+[[Go Back-&gt;Raid5a]]</tw-passagedata><tw-passagedata pid="21" name="Raid6a" tags="" position="355,1524.166666666667" size="100,100">You pull out the map you grabbed from your stuff back at the camp.
+
+(color: $raidColor)[“You’re kidding me, you almost forgot the blueprints of the base?!”] $npcRaid exclaims.
+
+[[Ignore them and say nothing.-&gt;Raid7a]]
+[[“Apparently, luckily I didn’t and now we can figure out which way to go.” -&gt;Raid7a]]
+</tw-passagedata><tw-passagedata pid="22" name="Raid6b" tags="" position="538.3333333333334,1517.5000000000002" size="100,100">You aren’t sure which way to go when suddenly it hits you… that feeling from earlier. Your heart rate starts to pick up and you begin to sweat. $npcRaid looks over at you and says, (color: $raidColor)[“I swear, if you’re getting nervous now because we didn’t get that thing from the base I will lose it.”]
+
+The words come slowly out of your mouth, “I… I… I forgot the map of the police station with my stuff back at the camp, I don’t know which way to go…”
+
+Anger flashes on $npcRaid’s face, then it is replaced with a look of suspicion. $npcRaid cautiously says, (color: $raidColor)[“How could you forget something so important to our mission???? Whatever, let&#39;s just finish this and get out of here. Stay close to me, I can’t trust you to not get us killed. If you try to sabotage this mission anymore I’m voting for your head tonight. You&#39;re lucky that I looked at the map last night and I know which way to go. [[Just follow me.-&gt;Raid8a]]”]
+
+(set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st - 1))</tw-passagedata><tw-passagedata pid="23" name="Raid7a" tags="" position="465,1690.8333333333337" size="100,100">Looking at the map you see taking the left path leads to a meeting room and the right takes you to the weapons room.. You can hear faint voices trailing down the hallway from the left. It’s best if you avoid that hallway.
+
+[[Try to go down it.-&gt;Raid7b]]
+[[Head to the weapons room.-&gt;Raid8a]]</tw-passagedata><tw-passagedata pid="24" name="Raid8a" tags="" position="471.66666666666663,1870.8333333333337" size="100,100">$npcRaid leads the way down the right hallway towards the weapons room. As you near the door at the notice windows on either side of the room. Glancing through them you see no one is there, and the room looks empty. You make it to the door and (link: &quot;go inside.&quot;)[ 
+
+
+(t8n: &quot;dissolve&quot;) + (color: $raidColor)[“Oh my gosh,”] (t8n: &quot;dissolve&quot;)[$npcRaid says, (color: $raidColor)[“There are so many guns here”.]
+
+The walls of the room are covered with guns, ammunition, explosives, you name it. The two of you rapidly set your bags down and begin stuffing them full of whatever you can grab. Once the bags are full you leave the room and [[make your way down the hallway to the exit.-&gt;Raid9]]]]</tw-passagedata><tw-passagedata pid="25" name="Raid7b" tags="" position="265,1709.166666666667" size="100,100">You take a step towards the left hallway and $npcRaid looks at you strangely. “What are you doing?” they ask. “The map says the weapons room is to the right. [[Come on, let&#39;s go-&gt;Raid8a]].”
+
+(set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st - 1))
+</tw-passagedata><tw-passagedata pid="26" name="Raid9" tags="Todo" position="471.66666666666663,2020.8333333333337" size="100,100">Back at the back entrance to the station, you open the door and poke your head outside. As you do so… you hear shouting from behind you! You have no idea how they found you but you look back inside the station and see $npcRaid running towards you. You distinctly remember him/her being right behind you until the hallway split, [[but apparently not...-&gt;Raid10]]</tw-passagedata><tw-passagedata pid="27" name="Raid10" tags="" position="471.66666666666663,2170.833333333334" size="100,100">“Where were you?!” you ask him/her.
+(color: $raidColor)[“I was grabbing more weapons and left a little after you. Some AI down the left hallway noticed me leaving!”] As they finish their sentence they catch up to you and race through the open door. Still standing inside the doorway, you glance behind and see the AI $npcRaid was talking about. Without a moment to lose, you sprint away from the door and across the parking lot [[towards the generator.-&gt;Raid11]]</tw-passagedata><tw-passagedata pid="28" name="Raid11" tags="" position="471.66666666666663,2320.833333333334" size="100,100">You see $npcRaid sprinting ahead back into the city and you can hear the AI behind you getting closer.
+
+[[You try to outrun them and escape in the city.-&gt;Raid12a]]
+[[You hide under a broken piece of the generator.-&gt;Raid12b]]
+</tw-passagedata><tw-passagedata pid="29" name="Raid12a" tags="" position="396.66666666666663,2470.833333333334" size="100,100">The AI keep gaining ground on you as you grow more and more tired. Within moments you realize the footsteps are directly behind you and you feel a cold hand grab your shoulder. It pulls you down and you fall to the ground. The barrel of a gun enters your vision and the last thing you hear is the ringing as the gun is fired...
+
+&lt;!-- Smash a timer before death or something. I dunno --&gt;</tw-passagedata><tw-passagedata pid="30" name="Raid12b" tags="" position="646.6666666666666,2460.833333333334" size="100,100">Noticing a large sheet of scrap metal, you scramble underneath it, knowing that you are no match for any AI in a foot race. You muffle your breathing with your hand as you hear two AI creep around the side of the generator(link: &quot;...&quot;)[
+(set: $tasksDone&#39;s 4th to 1)
+It’s dark outside and you think you’re well hidden. “Where is he/she?” one of the AI asks. 
+
+(color: &quot;Grey&quot;)[“I don’t know, they he/she must have run towards the city. Let&#39;s keep looking there.”]
+
+The feet disappear from your vision. The footsteps grow quieter and eventually disappear. You crawl out of your hiding place and return to the camp.
+
+(if: $raidFlag)[(replace: &quot;It’s dark outside and you think you’re well hidden.&quot;)[It’s light outside and you can clearly see two pairs of feet come around the side of the generator.] (replace: &quot;The feet disappear from your vision. The footsteps grow quieter and eventually disappear. You crawl out of your hiding place and return to the camp.&quot;)[You see the feet begin to disappear... 
+when one pair of them abruptly stops. They turn in your direction and begin walking towards you.
+
+“Well well well, if the glare from this sheet of metal didn’t catch my eye, I wouldn’t have found you…”]]
+
+(click: &quot;…&quot;)[(go-to: &quot;Raid13&quot;)]
+(click: &quot;You crawl out of your hiding place and return to the camp.&quot;)[(go-to: &quot;TaskPage&quot;)]
+]</tw-passagedata><tw-passagedata pid="31" name="Raid13" tags="" position="646.6666666666666,2610.833333333334" size="100,100">The sheet of metal is ripped away, revealing your location,  and you see two AI standing above you with a wicked look in their eye. One of them pulls out a gun and aims it at you. 
+
+(color: &quot;grey&quot;)[“You almost got away, it’s a shame you couldn’t have tried this little farce at night time, probably would have gotten away with it then. Stupid humans.”] The two AI let out a robotic cackle then refocus their attention on you. The gun raises slowly to your head and you hear the shot ring out…</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
