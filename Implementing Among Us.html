@@ -63,6 +63,16 @@ tw-story[tags~="Home"] {
   background-size: cover;
 }
 
+tw-story[tags~="hand"] {
+  background-image: url("dreams.jpg");
+  background-size: cover;
+}
+
+tw-story[tags~="supplies"] {
+  background-image: url("city.jpg");
+  background-size: cover;
+}
+
 tw-story[tags~="publix"] {
   background-image: url("Publix.jpg");
   background-size: cover;
@@ -75,6 +85,11 @@ tw-story[tags~="GettingWater"] {
 
 tw-story[tags~="shot"] {
   background-image: url("shot.jpg");
+  background-size: cover;
+}
+
+tw-story[tags~="weapons"] {
+  background-image: url("weaponsRoom.jpg");
   background-size: cover;
 }
 
@@ -274,7 +289,7 @@ Anger flashes on $npcRaid’s face, then it is replaced with a look of suspicion
 
 [[Try to go down it.-&gt;Raid7b]]
 [[Head to the weapons room.-&gt;Raid8a]]
-&lt;/p&gt;</tw-passagedata><tw-passagedata pid="23" name="Raid8a" tags="raid" position="909,2374" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;$npcRaid leads the way down the right hallway towards the weapons room. As you near the door at the end you notice windows on either side of the room. Glazing through them you see no one is there and the room appears to be empty. You make it to the door and (link: &quot;go inside.&quot;)[ 
+&lt;/p&gt;</tw-passagedata><tw-passagedata pid="23" name="Raid8a" tags="weapons" position="909,2374" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;$npcRaid leads the way down the right hallway towards the weapons room. As you near the door at the end you notice windows on either side of the room. Glazing through them you see no one is there and the room appears to be empty. You make it to the door and (link: &quot;go inside.&quot;)[ 
 
 
 (t8n: &quot;dissolve&quot;) + (color: $raidColor)[“Oh my gosh,”] (t8n: &quot;dissolve&quot;)[$npcRaid says, (color: $raidColor)[“There are so many guns here”.]
@@ -296,8 +311,7 @@ The walls of the room are covered with guns, ammunition, explosives, you name it
 
 (color: &quot;Purple&quot;)[“I don’t know, they must have run towards the city. Let&#39;s keep looking there.”]
 
-The feet disappear from your vision. The footsteps grow quieter and eventually disappear. You crawl out of your hiding place and return to the camp.]
-&lt;/p&gt;
+The feet disappear from your vision. The footsteps grow quieter and eventually disappear. You crawl out of your hiding place and return to the camp.&lt;/p&gt;]
 (if: $raidFlag)[(replace: &quot;It’s dark outside and you think you’re well hidden.&quot;)[It’s light outside and you can clearly see two pairs of feet come around the side of the generator.] (replace: &quot;The feet disappear from your vision. The footsteps grow quieter and eventually disappear. You crawl out of your hiding place and return to the camp.&quot;)[You see the feet begin to disappear... 
 when one pair of them abruptly stops. They turn in your direction and begin walking towards you.
 
@@ -340,53 +354,44 @@ Suddenly, you receive a hard blow to the back and taste cold metal as a firm gri
 	(if: $timer1 is 0)[(goto: &quot;BackgroundDeath&quot;)]]</tw-passagedata><tw-passagedata pid="35" name="Search for the exit" tags="publix" position="1920,596" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Instead of looking for the noise, you go with your gut and decide to get the hell out of there. Unfortunately, there’s a catch––your flashlight has just flickered for what seems to be the final time, and the pressing darkness in the store hides even your hand from your gaze. Before you panic, though, you remember that you saw batteries by the cash registers when you walked in. However, you worry that stopping to search will cost you valuable time in your escape, but you also have a terrible memory and absolutely no idea where to find the exit.
 
 [[Search for batteries]]
-[[Search for the exit-&gt;SE2]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="36" name="Generic Death" tags="" position="1056.6666666666667,64" size="100,100">(live: 1s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD
+[[Search for the exit-&gt;SE2]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="36" name="Generic Death" tags="" position="1056,64" size="100,100">(live: 1s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD
 
 
 
 
-(link: &quot;Return to Title&quot; )[(reload:)]](stop:)]</tw-passagedata><tw-passagedata pid="37" name="GettingSupplies" tags="supplies" position="516,673" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;There has been no evidence of other survivors since you’ve come here, but at least that means there should be plenty of supplies for you.
+(link: &quot;Return to Title&quot; )[(reload:)]](stop:)]</tw-passagedata><tw-passagedata pid="37" name="GettingSupplies" tags="supplies" position="527.3333333333334,674.3333333333334" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Even though you have some suspicions, nothing is clear yet. You wonder, should you remain cautious of the others or try trusting them?
 
 [[Choose to go alone]]
 Choose to go with $npc3
 &lt;/p&gt;
-(click: (&quot;Choose to go with &quot; + $npc3))[(goto: &quot;GoWith&quot;)]</tw-passagedata><tw-passagedata pid="38" name="Choose to go alone" tags="supplies" position="422,874.6666666666666" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You do not care if it’s risky, you no longer trust any of them enough to be sent out with only one of them. When you tell them you want to go by yourself, you receive some backlash. At this point, even if they disapprove, you do not care. You are here to survive and going by yourself is the safest way to ensure that. You gear up and head off to scour the area. Walking past the shops, or at least what is left of them, reminds you of the world before this. How you wish you could just close your eyes and be back then. One of the last things standing, or mostly standing, is the ferris wheel you had ridden on so many times before. Seeing it still standing draws you closer. “If only..” you mutter under your breath. Without realizing it, you are out wandering aimlessly for hours. 
+(click: (&quot;Choose to go with &quot; + $npc3))[(goto: &quot;GoWith&quot;)]</tw-passagedata><tw-passagedata pid="38" name="Choose to go alone" tags="supplies" position="310,813" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You do not care if it’s risky, you no longer trust any of them enough to be paired up. When you tell them you want to go by yourself, you receive some backlash. At this point, even if they disapprove, you are here to survive and going by yourself is the safest way to ensure that. 
 
-[[Look on way back to base]]
-[[Look around here then go back]]&lt;/p&gt;
+You gear up and head off to scour the area. Walking past what’s left of the shops reminds you of the world before this. How you wish you could just close your eyes and be back then. “If only...” you mutter under your breath.
+
+|hidden)[Without realizing it, you are out wandering aimlessly for hours.
+
+
+[[Look for supplies on way back to base-&gt;Look on way back to base]]
+[[Look around here for supplies then go back-&gt;Look around here then go back]]]&lt;/p&gt;
+(click: &quot;If only...&quot;)[(show: ?hidden)]
 (set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st -1))
 (set: $npcsTrust&#39;s 2nd to ($npcsTrust&#39;s 2nd -1))
 (set: $npcsTrust&#39;s 3rd to ($npcsTrust&#39;s 3rd -1))
-(set: $tasksDone&#39;s 3rd to 1)</tw-passagedata><tw-passagedata pid="39" name="GoWith" tags="supplies" position="575.3333333333334,873.6666666666666" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;It’s too risky to leave by yourself. Plus, in the midst of rising suspicions, you do not want to draw any attention towards yourself. So, you and $npc3 set off in the city to search for anything and everything. You let $npc3 take the lead as you follow closely behind, ensuring not to let them out of your sight. 
-(color: &quot;green&quot;)[“You still there?”] they ask, as if they haven’t heard you trip over almost everything that lays in your way.
+(set: $tasksDone&#39;s 3rd to 1)</tw-passagedata><tw-passagedata pid="39" name="GoWith" tags="supplies" position="604.3333333333334,808" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;It’s too risky to leave by yourself. Plus, in the midst of rising suspicions, you do not want to draw any attention towards yourself. So, you and $npc3 set off in the city to search for anything and everything. You let $npc3 take the lead as you follow closely behind, ensuring not to let him out of your sight. 
+
+(color: &quot;green&quot;)[“You still there?”] he asks, as if he hasn’t heard you trip over almost everything that lays in your way.
+
 “Ya. Do you see anything yet?”
+
 (color: &quot;green&quot;)[“Nah, just a bunch of useless crap.”]
-That was the longest conversation you have had with $npc3, but it seemed to die just as quickly as it had started. As you move through the city, you begin peeking into department stores and down alleys that you pass. When you see an unopened dumpster, you signal $npc3 to follow. 
-(color: &quot;green&quot;)[“Okay, on the count of three…”] $npc3 nods, readying his weapon to fight off whatever could appear
-(color: &quot;green&quot;)[“1…
-2…
-3-”] without even finishing the count, you throw open the top and duck as $npc3 peers inside. 
-(color: &quot;green&quot;)[“All good, you can get up now”] $npc3 says. You stand up and join him as they reach inside. A blood-stained backpack sat next to a duct taped tarp splattered red. 
-Just as you start to turn away, attempting to hold down any scraps left in your stomach, $npc3 grabs you and pushes you into the dumpster. You see him/her jump in and rush to shut the top. Leaving only a small opening to peer outside, $npc3 motions for silence as you catch a faint noise. You reposition yourself, trying to forget about the body you are currently supporting yourself on. Only a few minutes later do you see the AI walking past. 
-After sitting in the dumpster well over an hour since it passed, $npc3 begins to open the top slightly. You both begin to step out as you desperately hope it is long gone. 
-$npc3 whispers that you both should head back to the base with the backpack. You ---return, regain---- to following behind $npc3 while being tasked with carrying the backpack. You search for anything useful and find batteries, a flashlight, a canteen, rope, and a pocket knife. Clearly this belongs to a survior-or used to belong to one. You zip up the bag, ignoring the blood now, and find your way back to base in one piece. 
+
+That was the longest conversation you have had with $npc3, but it seemed to [[die just as quickly as it had started.]]
 &lt;/p&gt; 
 
-(click: &quot;find your way back to base&quot;)[(goto: &quot;TaskPage&quot;)]
-(set: $tasksDone&#39;s 3rd to 1)</tw-passagedata><tw-passagedata pid="40" name="NightWatch" tags="" position="921,755" size="100,100">As the sun begins to set, you head to meet the others in the room where the group sleeps. It is $npc3’s turn to be the night watch. The rest of the group trickles in as you kneel by the fire. $npc3 is already pulling back his tarp, leading you to do the same. Although you are hesitant to trust $npc3, you know you cannot afford to miss any more sleep. Your eyelids begin to fall and you struggle to hold them open. As you start to drift, you notice $npc3 beginning his patrol.
+(set: $tasksDone&#39;s 3rd to 1)</tw-passagedata><tw-passagedata pid="40" name="NightWatch" tags="Home" position="914,728" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;As the sun begins to set, you head to meet the others in the room where the group sleeps. It is $npc3’s turn to be the night watch. The rest of the group trickles in as you kneel by the fire. $npc3 is already pulling back his tarp, leading you to do the same. Although you are hesitant to trust $npc3, you know you cannot afford to miss any more sleep. Your eyelids begin to fall and you struggle to hold them open. As you start to drift, you notice $npc3 beginning his patrol.&lt;/p&gt;
 
-|sleep1)[(t8n: &quot;dissolve&quot;)[Darkness. Your heart races as you find yourself alone in a black abyss. Each step you take leads nowhere. You are surrounded by nothing. Your breath morphs into smoke, dancing around your head, spiraling up, up to light that explodes from above before suddenly, a hand seizes your throat.]]
-
-|sleep2)[(t8n: &quot;dissolve&quot;)[You shoot up, gasping for air as you reach for your neck. For minutes you stay sitting up, motionless, rubbing your neck. As you begin to rub your eyes, you glance over the room. The light is dim as the fire has faded. Everyone is still asleep. You start to rest your head back, when you realize $npc3 has yet to walk by. You stare at the wall for a few minutes, or was it hours? You wonder where $npc3 is. All the nights you stood watch, it never took you this long to make the round back.
-
-[[Go back to sleep]]
-[[Wake up everyone else]]
-[[Go off on your own]]
-]]
-
-(click: &quot;drift&quot;)[(show: ?sleep1)]
-(click: &quot;a hand seizes your throat&quot;)[(show: ?sleep2)]</tw-passagedata><tw-passagedata pid="41" name="Go back to sleep" tags="" position="798,901" size="100,100">Although it was a little strange, you know you are on watch tomorrow night and need to get as much sleep as you can. You decide to shut your eyes and ask $npc3 about it in the morning. It is not long before your eyes close for the last time and (t8n-depart: &quot;dissolve&quot;)[[you are lost to sleep.-&gt;Sleep]]
-</tw-passagedata><tw-passagedata pid="42" name="Wake up everyone else" tags="" position="928,901" size="100,100">You are not sure what to do, so you sneak over to $npc3 and tap them until their eyes squint open. They turn over as they mumble under their breath, “...what do you want…” You whisper that $npc3 is gone, and they start to sit up. (color: &quot;red&quot;)[“What do you mean?”] At this point, you have stopped whispering and the others start to stir. 
+(click: &quot;drift&quot;)[(goto: &quot;N1&quot;)]</tw-passagedata><tw-passagedata pid="41" name="Go back to sleep" tags="" position="794,1061" size="100,100">Although it was a little strange, you know you are on watch tomorrow night and need to get as much sleep as you can. You decide to shut your eyes and ask $npc3 about it in the morning. It is not long before your eyes close for the last time and (t8n-depart: &quot;dissolve&quot;)[[you are lost to sleep.-&gt;Sleep]]
+</tw-passagedata><tw-passagedata pid="42" name="Wake up everyone else" tags="Home" position="909,1064" size="100,100">You are not sure what to do, so you sneak over to $npc3 and tap them until their eyes squint open. They turn over as they mumble under their breath, “...what do you want…” You whisper that $npc3 is gone, and they start to sit up. (color: &quot;red&quot;)[“What do you mean?”] At this point, you have stopped whispering and the others start to stir. 
 
 “I mean I’ve been up and I haven’t seen him come back. I don’t even know when he left but what if something is wrong.” Everyone starts to stagger to their feet and stretch as you and $npc1 search the room with your eyes for any clue. As you catch everyone up, it is decided that everyone will go out in search of $npc3. You gear up and start to head off. There is no luck at the base, so you begin to lead them into the streets, making sure to stay quiet. Suddenly, you pick up the faint sound of rocks rolling. You stop the group and direct them inside the nearest building. Gripping your weapon with everything you have, you motion to prepare to attack until you hear the -- voice of $npc3. You lower your weapon as you step out in front of $npc3, scaring him to the point he almost hits you. As he catches his breath, you ask him where he is coming from.
 
@@ -394,7 +399,7 @@ $npc3 whispers that you both should head back to the base with the backpack. You
 
 “Why didn’t you just go at the base? It’s not safe being out here alone, especially at night”
 
-(color: &quot;Green&quot;)[“Whatever.”] He brushes you off and heads back to base and the rest of them seem bothered, but you walk back and lay down to (t8n-depart: &quot;dissolve&quot;)[[get whatever little sleep you can.-&gt;Sleep]] </tw-passagedata><tw-passagedata pid="43" name="Go off on your own" tags="" position="1065,908" size="100,100">|fade-out&gt;[Although you know it is risky to leave alone, you do not fully trust the group. So, you struggle to your feet and begin to walk the compound, stopping each minute to listen for his steps. As you walk, you find yourself fading and tripping over your own feet. How far have you walked? Are you even still inside the base? Without any success, you decide you have to turn back as your vision continues to blur. 
+(color: &quot;Green&quot;)[“Whatever.”] He brushes you off and heads back to base and the rest of them seem bothered, but you walk back and lay down to (t8n-depart: &quot;dissolve&quot;)[[get whatever little sleep you can.-&gt;Sleep]] </tw-passagedata><tw-passagedata pid="43" name="Go off on your own" tags="Home" position="1025,1063" size="100,100">|fade-out&gt;[Although you know it is risky to leave alone, you do not fully trust the group. So, you struggle to your feet and begin to walk the compound, stopping each minute to listen for his steps. As you walk, you find yourself fading and tripping over your own feet. How far have you walked? Are you even still inside the base? Without any success, you decide you have to turn back as your vision continues to blur. 
 
 Walking back into the room where the group, you are surprised to find everyone else deep in conversation. Heads turn as you step in the room. The first to acknowledge you is $npc3. 
 
@@ -416,8 +421,8 @@ With that remark, $npc3 suggested everyone get what little sleep they have left.
 (set: $timer to 5)
 (set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st -1))
 (set: $npcsTrust&#39;s 2nd to ($npcsTrust&#39;s 2nd -1))
-(set: $npcsTrust&#39;s 3rd to ($npcsTrust&#39;s 3rd -1))</tw-passagedata><tw-passagedata pid="44" name="Sleep" tags="" position="920,1080" size="100,100">(live: 0.8s)[(t8n: &quot;dissolve&quot;)[(stop:)You wake up later and (color: &quot;white&quot;)[[[get back to work.-&gt;Day2]]]]]
-(set: $tasksDone&#39;s 5th to 1)</tw-passagedata><tw-passagedata pid="45" name="Day2" tags="Home" position="1431,1130" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Day 2 Tasks:
+(set: $npcsTrust&#39;s 3rd to ($npcsTrust&#39;s 3rd -1))</tw-passagedata><tw-passagedata pid="44" name="Sleep" tags="Home" position="905,1198" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(live: 0.8s)[(t8n: &quot;dissolve&quot;)[(stop:)You wake up later and (color: &quot;white&quot;)[[[get back to work.-&gt;Day2]]]]]&lt;/p&gt;
+(set: $tasksDone&#39;s 5th to 1)</tw-passagedata><tw-passagedata pid="45" name="Day2" tags="Home" position="1407.6666666666667,1130" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Day 2 Tasks:
 (text-style: &quot;bold&quot;)[
 * Raid an AI base 
 |last)[* Final Meeting ]
@@ -427,48 +432,45 @@ With that remark, $npc3 suggested everyone get what little sleep they have left.
 (if: $tasksDone&#39;s 4th is 1)[(show: ?last)]
 (click-goto: &quot;Raid an AI base &quot;, &quot;Raid&quot;)
 
-(click-goto: &quot;Final Meeting&quot;, &quot;Final Meeting&quot;)</tw-passagedata><tw-passagedata pid="46" name="Final Meeting" tags="" position="1398,1320.3333333333333" size="100,100">(link: &quot;You discuss the events of the day…&quot;)[
+(click-goto: &quot;Final Meeting&quot;, &quot;Final Meeting&quot;)</tw-passagedata><tw-passagedata pid="46" name="Final Meeting" tags="Home" position="1398,1320" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(link: &quot;You discuss the events of the day…&quot;)&lt;/p&gt;[
 	(if: $map is 0)[(goto: &quot;RM1&quot;)]
 	(if: $map is 1 and $hallway is 1)[(goto: &quot;RM1&quot;)]
 	(goto: &quot;M1&quot;)
-]</tw-passagedata><tw-passagedata pid="47" name="RM1" tags="" position="1408,1474" size="100,100">(color: &quot;red&quot;)[“I’m going to get straight to the point and say that I think $playerName is the imposter among us,”] $npc1 says…
+]</tw-passagedata><tw-passagedata pid="47" name="RM1" tags="Home" position="1408,1474" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(color: &quot;red&quot;)[“I’m going to get straight to the point and say that I think $playerName is the imposter among us,”] $npc1 says…
 
 (color: &quot;red&quot;)[(if: $map is 0)[“Today during the raid they forgot the map to the base! That act of sabotage could have gotten us killed if we didn’t know which hallway to go down and stumbled into some AI in the building! Forgetting something so important really seems to point at $playerName being the fake.”](if: $map is 1 and $hallway is 1)[“While $playerName and I were raiding the AI base, they pulled out the blueprints of the building and purposely tried walking down an unknown hallway. We even heard voices coming from that direction. That just screams at AI being down there and they tried to go in that direction! I don’t know how much clearer this can be, they need to go before they kill us in our sleep!”]]
 
 [[Say nothing and proceed to vote.-&gt;RM2]]
-|liar)[[[“It was just an accident I swear!”-&gt;RM2]]]
+|liar)[[[“It was just an accident I swear!”-&gt;RM2]]]&lt;/p&gt;
 
 (if: $map is 1 and $hallway is 1)[(show: ?liar)]
-(if: $map is 0)[(show:?liar)]</tw-passagedata><tw-passagedata pid="48" name="RM2" tags="" position="1410,1595" size="100,100">(color: &quot;red&quot;)[“We’re going to hold this vote right here and now,” $npc1. All in favor of getting rid of $playerName raise your hands!”]
+(if: $map is 0)[(show:?liar)]</tw-passagedata><tw-passagedata pid="48" name="RM2" tags="Home" position="1410,1595" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(color: &quot;red&quot;)[“We’re going to hold this vote right here and now,” $npc1. All in favor of getting rid of $playerName raise your hands!”]
 
 $npc2 and $npc3 put their heads together for a moment and whisper to each other. You cannot hear them but you have a feeling both will cast the same vote. You hope you got to know them well enough that they’ll choose to save you… 
 
 “Hurry up!” $npc1 shouts. “I want us to vote on the count of three!”
 &lt;!-- Okay but wtf who is the suss guy even anymore. wtf happened to our story lmao --&gt;
 |click&gt;[You start feeling very nervous, and close your eyes, too afraid to see who might raise their hand…](click: ?click)[
-
+&lt;/p&gt;
 (text-style: &quot;bold&quot;)[&quot;Three!&quot;]
 (set: $timer to 3)
 (live: 1.6s)[
 	(set: $timer to $timer - 1)
 	(if: $timer is 2)[(replace: &quot;Three&quot;)[Two]]
 	(if: $timer is 1)[(replace: &quot;Two&quot;)[One]]
-	(if: $timer is 0)[(stop:)(if: ($npcsTrust&#39;s 2nd + $npcsTrust&#39;s 3rd) &gt; 2)[(t8n-depart: &quot;dissolve&quot;)(goto: &quot;RMHappy&quot;)]
+	(if: $timer is 0)[(stop:)(if: ($npcsTrust&#39;s 2nd + $npcsTrust&#39;s 3rd) &gt; 3)[(t8n-depart: &quot;dissolve&quot;)(goto: &quot;RMHappy&quot;)]
 	(t8n-depart: &quot;dissolve&quot;)(goto: &quot;RMDead&quot;)
 ]
-]]</tw-passagedata><tw-passagedata pid="49" name="RMHappy" tags="" position="1294,1710" size="100,100">(t8n: &quot;dissolve&quot;)[(stop:)You open your eyes and see(link: &quot;...&quot;)[(show: ?win)]
-|win)[Only $npc1’s hand is up! Because your relationship with the other members, $npc2 and $npc3 did not believe $npc1’s claims and [[you were not voted off.-&gt;RWin]]]]</tw-passagedata><tw-passagedata pid="50" name="RWin" tags="" position="1291,1903" size="100,100">(live: 0.8s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE not DEAD
+]]</tw-passagedata><tw-passagedata pid="49" name="RMHappy" tags="Home" position="1294,1710" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(t8n: &quot;dissolve&quot;)[(stop:)You open your eyes and see(link: &quot;...&quot;)[(show: ?win)]
+|win)[Only $npc1’s hand is up! Because your relationship with the other members, $npc2 and $npc3 did not believe $npc1’s claims and [[you were not voted off.-&gt;RWin]]]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="50" name="RWin" tags="" position="1279.3333333333333,1916.3333333333333" size="100,100">(align: &quot;=&gt;&lt;=&quot;)[Congratulations! ]
 
+You were willing to trust others and support each other, and for that, the rest of your group trusts you as well. It&#39;s thanks to this bond you have formed that you were able to survive.</tw-passagedata><tw-passagedata pid="51" name="RMDead" tags="Home" position="1522,1725" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(t8n: &quot;dissolve&quot;)[(stop:)You open your eyes and see(link: &quot;...&quot;)[(show: ?win)]]
 
-
-
-[[Return to Title-&gt;Title]]](stop:)]</tw-passagedata><tw-passagedata pid="51" name="RMDead" tags="" position="1522,1725" size="100,100">(t8n: &quot;dissolve&quot;)[(stop:)You open your eyes and see(link: &quot;...&quot;)[(show: ?win)]]
-
-|win)[Everyone’s hand is raised in the air. You did not build up your relationships within the group enough to have anyone come to your defense. $npc1, $npc2, and $npc3 all [[voted for you to be killed.]]]</tw-passagedata><tw-passagedata pid="52" name="voted for you to be killed." tags="" position="1520.3333333333333,1906.6666666666667" size="100,100">Someone suddenly strikes you from behind and you lose consciousness.
+|win)[Everyone’s hand is raised in the air. You did not build up your relationships within the group enough to have anyone come to your defense. $npc1, $npc2, and $npc3 all [[voted for you to be killed.]]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="52" name="voted for you to be killed." tags="Home" position="1520,1906" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Someone suddenly strikes you from behind and you lose consciousness.
 
 When you come to, you slowly open your eyes. You find yourself tied down to a street lamp on Tech Square. You try screaming out but a gag in your mouth makes it so that no sound can be heard. As you thrash around trying to free yourself you hear the crunching of boots on the rubble coving the street, making their way towards you...
 
-|death)[You try even harder to break out of your bonds, but cannot, when suddenly, you feel a cold hand on your shoulder and a the nuzzle of a gun pressed against your head. The sound of the trigger  being pressed accompanied by metallic laughter is [[the last thing you hear.-&gt;Communication]]]
+|death)[You try even harder to break out of your bonds, but cannot, when suddenly, you feel a cold hand on your shoulder and a the nuzzle of a gun pressed against your head. The sound of the trigger  being pressed accompanied by metallic laughter is [[the last thing you hear.-&gt;Communication]]]&lt;/p&gt;
 
 (click: &quot;...&quot;)[
 	(show: ?death)
@@ -493,10 +495,9 @@ startingVol: 0.25</tw-passagedata><tw-passagedata pid="54" name="Title" tags="ti
 (live: 3.2s)[
 	(t8n: &quot;dissolve&quot;)[ (align: &quot;=&gt;&lt;=&quot;)[[[Start Game-&gt; Introduction]]] ]
 	(stop:)
-]	
-[[Start Game-&gt; Introduction]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="55" name="M1" tags="" position="1828,1442" size="100,100">Angry and exhausted, you arrive back at the base, kick off your shoes, and slump against the concrete wall. You knew going into the day’s mission that some risk was involved, but given how much went wrong, your suspicions of betrayal are all but confirmed.
+]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="55" name="M1" tags="Home" position="1828,1442" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Angry and exhausted, you arrive back at the base, kick off your shoes, and slump against the concrete wall. You knew going into the day’s mission that some risk was involved, but given how much went wrong, your suspicions of betrayal are all but confirmed.
 
-“Cain, Scarlett, Parker––get in here, now,” you call out. [[“We need to talk”-&gt;M2]]</tw-passagedata><tw-passagedata pid="56" name="Search for batteries" tags="publix" position="2130,649" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Not trusting your memory, you instead opt to look for batteries. Feeling the display in front of you for guidance, you quickly begin to make your way down the aisle, and soon enough, you stumble into an open space. Turning to your left, you zombie-walk straight into a magazine rack and instantly know that you’re in the right place. As quietly as possible, you start to rummage through the rack, knowing that each second that transpired meant another second spent in the same building with whatever made that mysterious noise.
+“Cain, Scarlett, Parker––get in here, now,” you call out. [[“We need to talk”-&gt;M2]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="56" name="Search for batteries" tags="publix" position="2130,649" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Not trusting your memory, you instead opt to look for batteries. Feeling the display in front of you for guidance, you quickly begin to make your way down the aisle, and soon enough, you stumble into an open space. Turning to your left, you zombie-walk straight into a magazine rack and instantly know that you’re in the right place. As quietly as possible, you start to rummage through the rack, knowing that each second that transpired meant another second spent in the same building with whatever made that mysterious noise.
 
 Suddenly, your fingers close on a pack of AA batteries. Success! You screw them into your flashlight, snap the cover into place, activate the beam, and almost jump out of your skin––$npc2 is standing no less than six feet in front of you. With a nine-inch kitchen cleaver.
 
@@ -508,20 +509,20 @@ Reaching the end of the aisle, you recite the necessary turns in your head: righ
 
 Clearly, splitting up was a poor idea, but you oddly feel like you can trust $npc2 even more than before––AIs don’t show that kind of emotion. After a brief stare off, the two of you (link: &quot;head back to the campsite.&quot;)[(goto: &quot;TaskPage&quot;)]
 &lt;/p&gt;
-(set: $tasksDone&#39;s 2nd to 1) (set: $npcsTrust&#39;s 2nd to ($npcsTrust&#39;s 2nd + 1))</tw-passagedata><tw-passagedata pid="58" name="M2" tags="" position="1824.3333333333333,1564" size="100,100">You jump right in with your suspicions. “Over the past few days, I’ve come to the undeniable conclusion that our group has been infiltrated by an AI––and don’t even try to convince me otherwise, there’s simply too much evidence. If I don’t get a confession from one of you RIGHT now, I’ll have you know that my trigger finger is itching, and I’m prepared to hold a vote to throw someone out on the streets. Test me.”
+(set: $tasksDone&#39;s 2nd to 1) (set: $npcsTrust&#39;s 2nd to ($npcsTrust&#39;s 2nd + 1))</tw-passagedata><tw-passagedata pid="58" name="M2" tags="Home" position="1824,1564" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You jump right in with your suspicions. “Over the past few days, I’ve come to the undeniable conclusion that our group has been infiltrated by an AI––and don’t even try to convince me otherwise, there’s simply too much evidence. If I don’t get a confession from one of you RIGHT now, I’ll have you know that my trigger finger is itching, and I’m prepared to hold a vote to throw someone out on the streets. Test me.”
 
 Scarlett laughed. (color: &quot;aqua&quot;)[“Hang on, $playerName, I was going to suggest the exact same thing––only, I want YOU out of here. After all, you’ve been the common denominator with everything that’s gone wrong recently.”]
 
 What do you say?
 [[“If you’re blaming me, then it must be you…”-&gt;M3a]]
-[[“You wouldn’t understand, you didn’t see what I saw at the raid today. You have to trust me.”-&gt;M3b]]
-</tw-passagedata><tw-passagedata pid="59" name="M3a" tags="" position="1751,1714" size="100,100">You find it odd that Scarlett is accusing you given your suspicions of $npc3, but her accusation was so far out of left field that you’re prepared to double down on voting her out. “Scarlett, if you were innocent, you would know that I can’t be the AI, so I’m honestly convinced that it’s you now. It makes sense, too––were you responsible for making those noises in Atlantic Station?”
+[[“You wouldn’t understand, you didn’t see what I saw at the raid today. You have to trust me.”-&gt;M3b]]&lt;/p&gt;
+</tw-passagedata><tw-passagedata pid="59" name="M3a" tags="Home" position="1751,1714" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You find it odd that Scarlett is accusing you given your suspicions of $npc3, but her accusation was so far out of left field that you’re prepared to double down on voting her out. “Scarlett, if you were innocent, you would know that I can’t be the AI, so I’m honestly convinced that it’s you now. It makes sense, too––were you responsible for making those noises in Atlantic Station?”
 
 Scarlett scrambles to her feet. (color:&quot; aqua&quot;)[“Cain, Parker, do you hear this nonsense? Let’s vote this loser out before he manipulates us any further! On the count of three.”]
 
 |hide)[Too late, you notice a slight smirk on $npc1’s face. Have you been played? Is it even smart to proceed with this vote?]
 (click: &quot;proceed&quot;)[
-(text-style: &quot;bold&quot;)[&quot;Three!&quot;]
+(text-style: &quot;bold&quot;)[&quot;Three!&quot;]&lt;/p&gt;
 (set: $timer to 3)
 (live: 1.6s)[
 	(set: $timer to $timer - 1)
@@ -531,7 +532,7 @@ Scarlett scrambles to her feet. (color:&quot; aqua&quot;)[“Cain, Parker, do yo
 ]
 ]
 
-(click: &quot;three.&quot;)[(show: ?hide)]</tw-passagedata><tw-passagedata pid="60" name="M3b" tags="" position="1899.3333333333333,1714" size="100,100">“We need to talk about how $npc3 completely disappeared during the raid today and we were then immediately discovered by the AIs!” you exclaim. “I swear that he was right behind me the entire time back to the exit, but he claims he stayed back to pick up a few more weapons that he didn’t have!”
+(click: &quot;three.&quot;)[(show: ?hide)]</tw-passagedata><tw-passagedata pid="60" name="M3b" tags="Home" position="1899,1714" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;“We need to talk about how $npc3 completely disappeared during the raid today and we were then immediately discovered by the AIs!” you exclaim. “I swear that he was right behind me the entire time back to the exit, but he claims he stayed back to pick up a few more weapons that he didn’t have!”
 
 $npc3 cleared his throat. (color: &quot;green&quot;)[“To be honest, I don’t have a great explanation. I did stay back, but I destroyed the last few weapons, so I wouldn’t have had them. And you must have been seeing things, I’m the one who got lost and panicked!”]
 
@@ -539,7 +540,7 @@ The story adds up, but you’re not sure you buy it. “Scarlett? $npc1? Are we 
 
 $npc1 nods. (color: &quot;red&quot;)[“On three, let’s vote. I think I’ve heard enough, plus I have a few more suspicions of my own.”]
 (click: &quot;On three&quot;)[
-(text-style: &quot;bold&quot;)[&quot;Three!&quot;]
+(text-style: &quot;bold&quot;)[&quot;Three!&quot;]&lt;/p&gt;
 (set: $timer to 3)
 (live: 1.6s)[
 	(set: $timer to $timer - 1)
@@ -547,18 +548,18 @@ $npc1 nods. (color: &quot;red&quot;)[“On three, let’s vote. I think I’ve h
 	(if: $timer is 1)[(replace: &quot;Two&quot;)[One]]
 	(if: $timer is 0)[(stop:)(t8n-depart: &quot;dissolve&quot;)(goto: &quot;Vote&quot;)]
 ]
-]</tw-passagedata><tw-passagedata pid="61" name="Vote" tags="" position="1838,1845" size="100,100">(live: 0.8s)[(t8n: &quot;dissolve&quot;)[What is your vote?
+]</tw-passagedata><tw-passagedata pid="61" name="Vote" tags="Home" position="1838,1845" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(live: 0.8s)[(t8n: &quot;dissolve&quot;)[What is your vote?
 
 Cain
 Scarlett
 Parker
 [[Call off the vote-&gt;EndingWW]]
-](stop:)]
+](stop:)]&lt;/p&gt;
 
 (click: &quot;Cain&quot;)[(set: $chose to &quot;Cain&quot;)(goto: &quot;EndingQQ&quot;)]
 (click: &quot;Scarlett&quot;)[(set: $chose to &quot;Scarlett&quot;)(goto: &quot;EndingQQ&quot;)]
 (click: &quot;Parker&quot;)[(set: $chose to &quot;Parker&quot;)(goto: &quot;EndingQQ&quot;)]
-</tw-passagedata><tw-passagedata pid="62" name="EndingQQ" tags="" position="1763,1995" size="100,100">(live: 0.8s)[(t8n: &quot;dissolve&quot;)[(align: &quot;=&gt;&lt;=&quot;)[GAME OVER]
+</tw-passagedata><tw-passagedata pid="62" name="EndingQQ" tags="Home" position="1763,1995" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(live: 0.8s)[(t8n: &quot;dissolve&quot;)[(align: &quot;=&gt;&lt;=&quot;)[GAME OVER]
 After voting out $chose, you tie them up and carry them to the AI base kicking, screaming, and pleading with their strained vocal cords for you to spare them. But, set on your decision, you and the rest of your group dump $chose writhing on the ground and head back to the MARTA station, $chose’s shrill yells ringing in your ears.
 
 Over the next few days, $chose does not return. Staring at the ceiling from your makeshift bed, you ponder whether your decision was right. Had there been an AI among you, after all? The signs were there, but every problem could have been coincidental and simply fed your delusional mind. Perhaps you had simply been too quick to jump to conclusions and generalize instead of being looking for the human behind the intelligence. Even though artificial intelligences had finally surpassed the computing power of the human brain, they had never quite understood basic human emotions, or how to see the good in others.
@@ -569,43 +570,64 @@ Your last thoughts are of a deep voice laughing…
 
 “We didn’t. Your own inability to be human did.”
 (stop:)
-(align: &quot;=&gt;&lt;=&quot;)[[[Return to Title-&gt;Title]]]]]</tw-passagedata><tw-passagedata pid="63" name="EndingWW" tags="" position="1913,1995" size="100,100">(live: 0.8s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[“I’ll start. Now, I’m going to be honest. I had some suspicions earlier that one of us was not who they said they were. But, after getting to know you all these past few days, I trust you. If you have any concerns feel free to share them, but I think our group is fine.”
+(align: &quot;=&gt;&lt;=&quot;)[[[Return to Title-&gt;Title]]]]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="63" name="EndingWW" tags="Home" position="1913,1995" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(live: 0.8s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[“I’ll start. Now, I’m going to be honest. I had some suspicions earlier that one of us was not who they said they were. But, after getting to know you all these past few days, I trust you. If you have any concerns feel free to share them, but I think our group is fine.”
 
 You look around at everyone’s faces. As you scan the group, everyone nods in agreement.
 
-“Okay, then, let’s get back to work.”
-
-EVERYONE IS ALIVE
-
-[[Return to Title-&gt;Title]]](stop:)]</tw-passagedata><tw-passagedata pid="64" name="BackgroundDeath" tags="" position="1210,52" size="100,100">(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD
+“Okay, then, [[let’s get back to work.”-&gt;MilesMorales]](stop:)]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="64" name="BackgroundDeath" tags="" position="1210,52" size="100,100">(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD
 
 
 
 
-[[Return to Title-&gt;Title]]]</tw-passagedata><tw-passagedata pid="65" name="ShotThroughTheHeart" tags="" position="560.3333333333333,3089.3333333333335" size="100,100">(live: 1s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD(stop:)]]
+[[Return to Title-&gt;Title]]]</tw-passagedata><tw-passagedata pid="65" name="ShotThroughTheHeart" tags="" position="560,3089" size="100,100">(live: 1s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD(stop:)]]
 
 
 (live: 2s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[Did you really think you could outrun a robot?
 
 (link: &quot;Return to Title&quot; )[(reload:)]
-(link: &quot;Return to start of Raid&quot; )[(goto: &quot;Raid&quot;)](stop:)]]</tw-passagedata><tw-passagedata pid="66" name="DaylightSavings" tags="" position="555.9999999999999,3232.666666666667" size="100,100">(live: 1s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD(stop:)]]
+(link: &quot;Return to start of Raid&quot; )[(goto: &quot;Raid&quot;)](stop:)]]</tw-passagedata><tw-passagedata pid="66" name="DaylightSavings" tags="" position="555,3232" size="100,100">(live: 1s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD(stop:)]]
 
 
 (live: 2s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[Perhaps you should have waited to raid the base at night time.
 
 (link: &quot;Return to Title&quot; )[(reload:)]
-(link: &quot;Return to start of raid&quot; )[(goto: &quot;Raid&quot;)](stop:)]]</tw-passagedata><tw-passagedata pid="67" name="Communication" tags="" position="1520.3333333333333,2056.666666666667" size="100,100">(live: 1s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD(stop:)]]
+(link: &quot;Return to start of raid&quot; )[(goto: &quot;Raid&quot;)](stop:)]]</tw-passagedata><tw-passagedata pid="67" name="Communication" tags="" position="1520,2056" size="100,100">(live: 1s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD(stop:)]]
 
 
 (live: 2s)[(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[Communication is key when working with others or trying to solve hard situations. A lack of communication in stressful environments can escalate tension and lead to negative outcomes. If only people didn’t jump to conclusions and truly tried to understand one another... Maybe you wouldn’t have died.
 
-(link: &quot;Return to Title&quot; )[(reload:)](stop:)]]</tw-passagedata><tw-passagedata pid="68" name="Look on way back to base" tags="supplies" position="358.6666666666667,1078" size="100,100">You are supposed to be back at the base soon, but all these memories drew your focus. Before you are gone from base for too long, you decide to just look in the buildings on the path back to base. You peek your head into a few of the old department stores, noticing some materials sprawled around the rubble. Seeing a worn duffle bag, you head behind a counter and toss the bag on top of the counter. A clanging echoed from this drop and startles you as you step back, but you start unzipping it as you move closer. 
+(link: &quot;Return to Title&quot; )[(reload:)](stop:)]]</tw-passagedata><tw-passagedata pid="68" name="Look on way back to base" tags="supplies" position="147,1074" size="100,100">You are supposed to be back at the base soon, but all these memories drew your focus. Before you are gone from base for too long, you decide to just look in the buildings on the path back to base. You peek your head into a few of the old department stores, noticing some materials sprawled around the rubble. Seeing a worn duffle bag, you head behind a counter and toss the bag on top of the counter. A clanging echoed from this drop and startles you as you step back, but you start unzipping it as you move closer. 
 A coil of rope, a wrench, a lighter, and some matches meet your gaze as a smile starts to grow on your face. You look outside to see the glow of sunset fading. You decide to leave with what you found and [[return to the base safely.-&gt;TaskPage]]
-</tw-passagedata><tw-passagedata pid="69" name="Look around here then go back" tags="supplyDead" position="485.33333333333337,1064.6666666666665" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You are supposed to be back at the base soon, but all these memories drew your focus. Being gone for an excessive amount of time could bring uneasiness to your group that you cannot afford right now. You’re not sure if you will be able to find supplies on the way back and returning without anything would make you feel awful, so you decide to look around a little longer. 
+</tw-passagedata><tw-passagedata pid="69" name="Look around here then go back" tags="supplies" position="379,1047" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You are supposed to be back at the base soon, but all these memories drew your focus. Being gone for an excessive amount of time could bring uneasiness to your group that you cannot afford right now. You’re not sure if you will be able to find supplies on the way back, so you decide to look around a little longer. 
 
-You walk a bit farther and go into the first promising building. Looking through the shop, the only possibly useful tool was a few matchsticks. As you step through the back door into the alley, you see a figment from the corner of your eye. Just as you turn to face it, you are struck to the ground. Fading in and out of consciousness, you can begin to make out the AI standing over you, until you are struck with the final blow.&lt;/p&gt;
+You walk a bit farther and go into the first promising building. Looking through the shop, you find nothing. As you step through the back door into the alley, you see a figment in the [[corner of your eye.]] 
+&lt;/p&gt;</tw-passagedata><tw-passagedata pid="70" name="BatterUp" tags="" position="361.6666666666667,1280.3333333333333" size="100,100">(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[YOU ARE DEAD
 
-(click: &quot;struck with the final blow&quot;)[(goto: &quot;BackgroundDeath&quot;)]</tw-passagedata></tw-storydata>
+Because you were so set on prioritizing yourself and did not even try trusting another survivor, you sealed your own fate. Oftentimes we trust in rumors and superficial judgements rather than actual people. This can lead to misunderstandings, or in this case, the end of a once hopeful future.
+
+
+[[Return to Title-&gt;Title]]]</tw-passagedata><tw-passagedata pid="71" name="corner of your eye." tags="supplyDead" position="361,1169" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Just as you turn to face it, you are struck to the ground. Fading in and out of consciousness, you can barely make out the AI standing over you, until you are struck with the final blow.&lt;/p&gt;
+
+
+(click: &quot;final blow&quot;)[(goto: &quot;BatterUp&quot;)]</tw-passagedata><tw-passagedata pid="72" name="die just as quickly as it had started." tags="dumpster supplies" position="591.3333333333334,1040.6666666666665" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;As you move through the city, you begin peeking into department stores and down alleys that you pass. When you see an unopened dumpster, you signal $npc3 to follow. 
+(color: &quot;green&quot;)[“Okay, on the count of three…”] (text-style: &quot;italic&quot;)[$npc3 nods, readying his weapon to fight off whatever could appear]
+“1…” 
+|hidden)[Without even finishing the count, you throw open the top and dumpster as $npc3 peers inside. 
+“All good, you can get up now” $npc3 says. You stand up and join him/her as they reach inside. A blood-stained backpack sat next to a duct taped tarp splattered red. 
+Just as you start to turn away, attempting to hold down any scraps left in your stomach, $npc3 grabs you and pushes you into the dumpster. You see him/her jump in and rush to shut the top. Leaving only a small opening to peer outside, $npc3 motions for silence as you catch a faint noise. You reposition yourself, trying to forget about the body you are currently supporting yourself on. Only a few minutes later, you see the AI walking past. 
+After sitting in the dumpster for well over an hour, $npc3 begins to open the top slightly. You both begin to step out as you desperately hope the AI is long gone. 
+$npc3 whispers that you both should head back to the base with the backpack. As you walk, you search for anything useful and find batteries, a flashlight, a canteen, rope, and a pocket knife. Clearly this belongs-or belonged- to a survivor.
+You zip up the bag, ignoring the blood now, and find your way back to base in one piece.]&lt;/p&gt;
+(click: &quot;1…&quot;)[(replace: &quot;1…&quot;)[2…]](click: &quot;2…&quot;)[(replace: &quot;2…&quot;)[3-](show: ?hidden)](click: &quot;back to base&quot;)[(goto: &quot;TaskPage&quot;)]</tw-passagedata><tw-passagedata pid="73" name="N1" tags="hand" position="915,840" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Darkness. Your heart races as you find yourself alone in a black abyss. Each step you take leads nowhere. You are surrounded by nothing. Your breath morphs into smoke, dancing around your head, spiraling up, up to light that explodes from above before suddenly, a [[hand seizes your throat.-&gt;N2]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="74" name="N2" tags="Home" position="913,942" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You shoot up, gasping for air as you reach for your neck. For minutes you stay sitting up, motionless, rubbing your neck. As you begin to rub your eyes, you glance over the room. The light is dim as the fire has faded. Everyone is still asleep. You start to rest your head back, when you realize $npc3 has yet to walk by. You stare at the wall for a few minutes, or was it hours? You wonder where $npc3 is. All the nights you stood watch, it never took you this long to make the round back.
+
+[[Go back to sleep]]
+[[Wake up everyone else]]
+[[Go off on your own]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="75" name="MilesMorales" tags="Home" position="1913,2145" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;After deciding not to kick anyone out of the group, you continue your tasks and eventually build up your base. In the coming years, you get to know everyone and are sure no one is an AI. You begin to thrive and set the foundation for the future of humanity to thrive.
+
+[[EVERYONE IS ALIVE-&gt;Morale]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="76" name="Morale" tags="" position="1913,2295" size="100,100">(align: &quot;=&gt;&lt;=&quot;)[Congratulations! ]
+
+You did not act rashly due to personal  judgements or opinions, meaning you did not unjustly kill anyone. Too many times people decide how to treat others based on superficial assumptions. As seen through this game, using communication can clear up these prejudices and open our eyes to the truth.
+</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
