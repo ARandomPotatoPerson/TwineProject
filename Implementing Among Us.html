@@ -178,7 +178,7 @@ You know you’ve been getting water from the same place for a couple weeks now 
 [[Go to old location-&gt; oldLocation]] 
 &lt;/p&gt;
 &lt;!-- $npc1 can and might be changed later --&gt;
-</tw-passagedata><tw-passagedata pid="3" name=" GettingFood" tags="Home" position="1199,316" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;As you and $npc2 enter an abandoned Atlantic Station, a screeching bat flies low above your head and the wind ruffles your hair slightly, causing every hair on your neck to stand straight up. Turning to $npc2, you notice she is not fazed at all, but you are visibly frightened of this dark and collapsing multi-story shopping center. 
+</tw-passagedata><tw-passagedata pid="3" name=" GettingFood" tags="Home" position="1199,316" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;As you and $npc2 enter an abandoned Atlantic Station, a screeching bat flies low above your head and the wind ruffles your hair slightly, causing every hair on your neck to stand straight up. Turning to $npc2, you notice she is not fazed at all, but you are visibly frightened of this dark and collapsing multi-story shopping center. 
 
 (color: &quot;aqua&quot;)[“We should split up. Meet back here in an hour?”] suggests $npc2.
 
@@ -190,11 +190,9 @@ TimerTest: Time left: $timer1(live: 1s)[
 	(set: $timer1 to ($timer1 - 1)) 
 	(if: $timer1 is 0)[(go-to: &quot;TaskPage&quot;)]
 	(replace: (text: ($timer1 + 1)))[$timer1]
-]</tw-passagedata><tw-passagedata pid="5" name=" oldLocation" tags="GettingWater" position="486,421" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You walk with $npc1 to the broken waterline about a mile away. Along the way the two of you talk about your lives before the war.
-(set: $tasksDone&#39;s 1st to 1) (set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st + 1))
-(click: &quot;you talk about your lives before the war&quot;)[
-	(replace: &quot;You walk with &quot; + $npc1 + &quot; to the broken waterline about a mile away. Along the way the two of you talk about your lives before the war.&quot;)[(t8n: &quot;dissolve&quot;)+(colour: red)[&quot;I was in the AI development team at Google. Not the ones who started working on the bots that are trying to kill us, but small things. AI in your cars, fridge, etc. I had just gotten married before the war… I miss &lt;br&gt;her...&quot; - $npc1] (t8n: &quot;dissolve&quot;)[&lt;br&gt;&lt;br&gt;You mention how you can relate as your family also died in the initial outbreaks of the war. &lt;span class=&#39;sadge&#39;&gt;[[You get lost in conversation about the past...-&gt; arrivedOldLocation]]&lt;/span&gt;]]
-]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="6" name="ChangeList" tags="" position="739,58" size="100,100">Day1 - GettingWater needs to have NPC updated in entire chain
+]</tw-passagedata><tw-passagedata pid="5" name=" oldLocation" tags="GettingWater" position="486,421" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;You walk with $npc1 to the broken waterline about a mile away. Along the way the two of you talk about your lives before the war.&lt;/p&gt;(set: $tasksDone&#39;s 1st to 1) (set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st + 1))
+(click: &quot;you talk about your lives before the war&quot;)[(t8n: &quot;dissolve&quot;)+(colour: red)[&quot;I was in the AI development team at Google. Not the ones who started working on the bots that are trying to kill us, but small things. AI in your cars, fridge, etc. I had just gotten married before the war… I miss her...&quot; says Parker] (t8n: &quot;dissolve&quot;)[&lt;br&gt;&lt;br&gt;You mention how you can relate as your family also died in the initial outbreaks of the war. &lt;span class=&#39;sadge&#39;&gt;[[You get lost in conversation about the past...-&gt; arrivedOldLocation]]&lt;/span&gt;]
+]</tw-passagedata><tw-passagedata pid="6" name="ChangeList" tags="" position="739,58" size="100,100">Day1 - GettingWater needs to have NPC updated in entire chain
 Images need implementation
 Images?
 Raid9/10/12b/StayTogether, him/her error
@@ -202,7 +200,7 @@ Music actually refuses to play with relative links like some kind of degen</tw-p
 
 There’s just one catch––the AIs are still out there, and they look exactly like humans. And you suspect one has infiltrated your group.
 
-[[Continue]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="9" name="Continue" tags="intro" position="900,493" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Unfortunately, there’s no time right now to think about your suspicions. Living out of an abandoned MARTA station, survival is clearly the number one priority, and your group has decided to split into smaller groups of two to complete essential tasks. It makes you slightly nervous that you must be left alone with someone else, but you know that this is the only plan that makes sense, so you go along with it. As the de-facto leader of the group, your friends look to you for your decision on [[which task you’d prefer to do.-&gt;TaskPage]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="10" name="TaskPage" tags="Home" position="915,613" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Day 1 Tasks:(text-style: &quot;bold&quot;)[
+[[Continue]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="9" name="Continue" tags="intro" position="900,493" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Unfortunately, there’s no time right now to think about your suspicions. Living out of an abandoned MARTA station, survival is clearly the number one priority, and your group has decided to split into smaller groups of two to complete essential tasks. It makes you slightly nervous that you must be left alone with someone else, but you know that this is the only plan that makes sense, so you go along with it. As the de-facto leader of the group, your friends look to you for your decision on [[which task you’d prefer to do.-&gt;TaskPage]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="10" name="TaskPage" tags="Home" position="915,613" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;Day 1 Tasks:(text-style: &quot;bold&quot;)[
 * Collect Water 
 * Collect Food 
 * Getting Survival Supplies 
@@ -290,7 +288,7 @@ The words come slowly out of your mouth, “I… I… I forgot the map of the po
 
 Anger flashes on $npcRaid’s face, then it is replaced with a look of suspicion. $npcRaid cautiously says, (color: $raidColor)[“How could you forget something so important to our mission???? Whatever, let&#39;s just finish this and get out of here. Stay close to me, I can’t trust you to not get us killed. If you try to sabotage this mission anymore I’m voting for your head tonight. You&#39;re lucky that I looked at the map last night and I know which way to go. [[Just follow me.-&gt;Raid8a]]”]
 &lt;/p&gt;
-(set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st - 1))</tw-passagedata><tw-passagedata pid="22" name="Raid7a" tags="raid" position="864,2195" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;LLooking at the map, you see taking the left path leads to a meeting room and the right takes you to the weapons room. You can hear faint voices trailing down the hallway from the left. It’s best if you avoid that hallway.
+(set: $npcsTrust&#39;s 1st to ($npcsTrust&#39;s 1st - 1))</tw-passagedata><tw-passagedata pid="22" name="Raid7a" tags="raid" position="864,2195" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;Looking at the map, you see taking the left path leads to a meeting room and the right takes you to the weapons room. You can hear faint voices trailing down the hallway from the left. It’s best if you avoid that hallway.
 
 [[Try to go down it.-&gt;Raid7b]]
 [[Head to the weapons room.-&gt;Raid8a]]
@@ -429,7 +427,7 @@ With that remark, $npc3 suggested everyone get what little sleep they have left.
 |last)[* Final Meeting ]
 ]&lt;/p&gt;
 
-(if: $tasksDone&#39;s 4th is 1)[(replace: &quot;Raid an AI base&quot;)[~~Raid an AI base~~]]
+(if: $tasksDone&#39;s 4th is 1)[(replace: &quot;Raid an AI base &quot;)[~~Raid an AI base~~]]
 (if: $tasksDone&#39;s 4th is 1)[(show: ?last)]
 (click-goto: &quot;Raid an AI base &quot;, &quot;Raid&quot;)
 
@@ -488,9 +486,9 @@ startingVol: 0.25</tw-passagedata><tw-passagedata pid="54" name="Title" tags="ti
 (set: $npc1 to &quot;Parker&quot;) 
 (set: $npc2 to &quot;Scarlett&quot;) 
 (set: $npc3 to &quot;Cain&quot;)
-(set: $tasksDone to (array: 0, 0, 0, 0, 0))
-(set: $meet1 to 0)
-(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[&lt;span style=&quot;font-size:84px;x&quot;&gt;AI AMONG US&lt;/span&gt;]
+(set: $tasksDone to (array: 0, 0, 0, 0, 0))(set: $meet1 to 0)
+(t8n: &quot;dissolve&quot;) + (align: &quot;=&gt;&lt;=&quot;)[&lt;span style=&quot;font-size:84px;x&quot;&gt;AI AMONG US &lt;/span&gt;]
+
 (live: 1.6s)[
 	(t8n: &quot;dissolve&quot;)[ (align: &quot;=&gt;&lt;=&quot;)[Created By:
 	Richard, Emily, Alex, Cole, Stephen] ](stop:)]
