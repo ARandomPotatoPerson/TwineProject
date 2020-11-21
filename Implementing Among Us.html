@@ -202,7 +202,7 @@ Music actually refuses to play with relative links like some kind of degen</tw-p
 
 There’s just one catch––the AIs are still out there, and they look exactly like humans. And you suspect one has infiltrated your group.
 
-[[Continue]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="9" name="Continue" tags="intro" position="900,493" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Unfortunately, there’s no time right now to think about your suspicions. Living out of an abandoned MARTA station, survival is clearly the number one priority, and your group has decided to split into smaller groups of two to complete essential tasks. It makes you slightly nervous that you must be left alone with someone else, but you know that this is the only plan that makes sense, so you go along with it. As the de-facto leader of the group, your friends look to you for your decision on [[which task you’d prefer to do.-&gt;TaskPage]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="10" name="TaskPage" tags="Home" position="915.3333333333334,613" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Day 1 Tasks:(text-style: &quot;bold&quot;)[
+[[Continue]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="9" name="Continue" tags="intro" position="900,493" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Unfortunately, there’s no time right now to think about your suspicions. Living out of an abandoned MARTA station, survival is clearly the number one priority, and your group has decided to split into smaller groups of two to complete essential tasks. It makes you slightly nervous that you must be left alone with someone else, but you know that this is the only plan that makes sense, so you go along with it. As the de-facto leader of the group, your friends look to you for your decision on [[which task you’d prefer to do.-&gt;TaskPage]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="10" name="TaskPage" tags="Home" position="915,613" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;Day 1 Tasks:(text-style: &quot;bold&quot;)[
 * Collect Water 
 * Collect Food 
 * Getting Survival Supplies 
@@ -248,7 +248,7 @@ As you get closer to the base you feel a sense of unease. Sweat forms on your fo
 &lt;!-- Color might have to change lmao --&gt;
 
 [[“Yeah, I’m just nervous, that’s all.”-&gt;Raid3a]]
-“I’m a little nervous, and something [[isn’t sitting right with me. Do you think we could return to the base so I can look for something?-&gt;Raid3b]]
+[[“I’m a little nervous, and something isn’t sitting right with me. Do you think we could return to the base so I can look for something?-&gt;Raid3b]]
 &lt;/p&gt;</tw-passagedata><tw-passagedata pid="15" name="Raid3a" tags="raid" position="798,1554" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;(colour: $raidColor)[[[“Alright then, lets keep going.”-&gt;Raid5a]]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="16" name="Raid3b" tags="raid" position="974,1559" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;(color: $raidColor)[“What’s going on?”] $npcRaid asks.
 “I feel as though I forgot something,” you say. 
 (color: $raidColor)[“Hopefully it wasn’t important. We’re almost at the police station and I don’t want to walk back to our camp and then make another trip here.”]
@@ -259,7 +259,7 @@ As you get closer to the base you feel a sense of unease. Sweat forms on your fo
 [[Continue with the mission.-&gt;Raid5a]]
 &lt;/p&gt;</tw-passagedata><tw-passagedata pid="17" name="Raid5a" tags="raid" position="887,1904" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;Time passes and you arrive at the police station with $npcRaid. It’s dark outside. Sneaking around to the back of the building you crouch behind a [[broken generator-&gt;Raid5b]] and see the backdoor to the station. $npcRaid’s scouting the day prior let him figure out the combination, so you know you can get inside if you make it to the door. 
 
-Leaving the shelter of the generator you cross the empty parking lot towards the back door. Parker pops the lock open and gently nudges it. The door slides open without a sound and you (link: &quot;peer inside.&quot;)[(t8n: &quot;dissolve&quot;)[&lt;br&gt;&lt;br&gt;A dark and a long hallway greets you. Padding softly down it, you can barely hear you or $npcRaid’s footsteps. At the end, the hallway splits into two paths.]]
+Leaving the shelter of the generator you cross the empty parking lot towards the back door. Parker pops the lock open and gently nudges it. The door slides open without a sound and you (link: &quot;peer inside.&quot;)[peer inside (t8n: &quot;dissolve&quot;)[&lt;br&gt;&lt;br&gt;A dark and a long hallway greets you. Padding softly down it, you can barely hear you or $npcRaid’s footsteps. At the end, the hallway splits into two paths.]]
 &lt;/p&gt;
 (click: &quot;splits into two paths.&quot;) [
 	(if: $map is 1)[(go-to: &quot;Raid6a&quot;)]
@@ -294,7 +294,7 @@ Anger flashes on $npcRaid’s face, then it is replaced with a look of suspicion
 
 [[Try to go down it.-&gt;Raid7b]]
 [[Head to the weapons room.-&gt;Raid8a]]
-&lt;/p&gt;</tw-passagedata><tw-passagedata pid="23" name="Raid8a" tags="weapons" position="907,2374" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;$npcRaid leads the way down the right hallway towards the weapons room. As you near the door at the end you notice windows on either side of the room. Glazing through them you see no one is there and the room appears to be empty. You make it to the door and (link: &quot;go inside.&quot;)[ 
+&lt;/p&gt;</tw-passagedata><tw-passagedata pid="23" name="Raid8a" tags="weapons" position="907,2374" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;$npcRaid leads the way down the right hallway towards the weapons room. As you near the door at the end you notice windows on either side of the room. Glazing through them you see no one is there and the room appears to be empty. You make it to the door and (link: &quot;go inside.&quot;)[go inside 
 
 
 (t8n: &quot;dissolve&quot;) + (color: $raidColor)[“Oh my gosh,”] (t8n: &quot;dissolve&quot;)[$npcRaid says, (color: $raidColor)[“There are so many guns here”.]
@@ -433,7 +433,7 @@ With that remark, $npc3 suggested everyone get what little sleep they have left.
 (if: $tasksDone&#39;s 4th is 1)[(show: ?last)]
 (click-goto: &quot;Raid an AI base &quot;, &quot;Raid&quot;)
 
-(click-goto: &quot;Final Meeting&quot;, &quot;Final Meeting&quot;)</tw-passagedata><tw-passagedata pid="46" name="Final Meeting" tags="Home" position="1407.6666666666667,1336.3333333333333" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(link: &quot;You discuss the events of the day…&quot;)&lt;/p&gt;[
+(click-goto: &quot;Final Meeting&quot;, &quot;Final Meeting&quot;)</tw-passagedata><tw-passagedata pid="46" name="Final Meeting" tags="Home" position="1407,1336" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(link: &quot;You discuss the events of the day…&quot;)&lt;/p&gt;[
 	(if: $map is 0)[(goto: &quot;RM1&quot;)]
 	(if: $map is 1 and $hallway is 1)[(goto: &quot;RM1&quot;)]
 	(goto: &quot;M1&quot;)
@@ -445,7 +445,7 @@ With that remark, $npc3 suggested everyone get what little sleep they have left.
 |liar)[[[“It was just an accident I swear!”-&gt;RM2]]]&lt;/p&gt;
 
 (if: $map is 1 and $hallway is 1)[(show: ?liar)]
-(if: $map is 0)[(show:?liar)]</tw-passagedata><tw-passagedata pid="48" name="RM2" tags="Home" position="1410,1596.6666666666667" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(color: &quot;red&quot;)[“We’re going to hold this vote right here and now,” $npc1. All in favor of getting rid of $playerName raise your hands!”]
+(if: $map is 0)[(show:?liar)]</tw-passagedata><tw-passagedata pid="48" name="RM2" tags="Home" position="1410,1596" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(color: &quot;red&quot;)[“We’re going to hold this vote right here and now,” $npc1. All in favor of getting rid of $playerName raise your hands!”]
 
 $npc2 and $npc3 put their heads together for a moment and whisper to each other. You cannot hear them but you have a feeling both will cast the same vote. You hope you got to know them well enough that they’ll choose to save you… 
 
@@ -459,7 +459,7 @@ $npc2 and $npc3 put their heads together for a moment and whisper to each other.
 	(set: $timer to $timer - 1)
 	(if: $timer is 2)[(replace: &quot;Three&quot;)[Two]]
 	(if: $timer is 1)[(replace: &quot;Two&quot;)[One]]
-	(if: $timer is 0)[(stop:)(if: ($npcsTrust&#39;s 2nd + $npcsTrust&#39;s 3rd) &gt; 3)[(t8n-depart: &quot;dissolve&quot;)(goto: &quot;RMHappy&quot;)]
+	(if: $timer is 0)[(stop:)(if: ($npcsTrust&#39;s 2nd + $npcsTrust&#39;s 3rd) &gt; 2)[(t8n-depart: &quot;dissolve&quot;)(goto: &quot;RMHappy&quot;)]
 	(t8n-depart: &quot;dissolve&quot;)(goto: &quot;RMDead&quot;)
 ]
 ]]</tw-passagedata><tw-passagedata pid="49" name="RMHappy" tags="Home" position="1294,1710" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;(t8n: &quot;dissolve&quot;)[(stop:)You open your eyes and see(link: &quot;...&quot;)[(show: ?win)]
@@ -626,22 +626,22 @@ You zip up the bag, ignoring the blood now, and find your way back to base in on
 [[Wake up everyone else]]
 [[Go off on your own]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="75" name="MilesMorales" tags="Home" position="1913,2145" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.5)&quot;&gt;After deciding not to kick anyone out of the group, you continue your tasks and eventually build up your base. In the coming years, you get to know everyone and are sure no one is an AI. You begin to thrive and set the foundation for the future of humanity to thrive.
 
-[[EVERYONE IS ALIVE-&gt;Morale]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="76" name="Morale" tags="" position="1954.6666666666667,2260" size="100,100">(align: &quot;=&gt;&lt;=&quot;)[Congratulations! ]
+[[EVERYONE IS ALIVE-&gt;Morale]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="76" name="Morale" tags="" position="1954,2260" size="100,100">(align: &quot;=&gt;&lt;=&quot;)[Congratulations! ]
 
 You did not act rashly due to personal  judgements or opinions, meaning you did not unjustly kill anyone. Too many times people decide how to treat others based on superficial assumptions. As seen through this game, using communication can clear up these prejudices and open our eyes to the truth.
 
 
-(align: &quot;=&gt;&lt;=&quot;)[[[Return to Title-&gt;Title]]]</tw-passagedata><tw-passagedata pid="77" name="interlude" tags="Home" position="1213.3333333333333,617.5000000000001" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;Having finished all tasks, you and the others sit out on the roof of the MARTA station, eating and drinking the fruits of your labor from the day. In an effort to normalize the world that you all now live in, your group makes sure to talk about everything good or uplifting that happened in a day. You originally were the one who thought of this so that it felt more like living rather than [[surviving.-&gt;interlude2]]
-&lt;/p&gt;(set: $meet1 to 1)</tw-passagedata><tw-passagedata pid="78" name="interlude2" tags="Home" position="1213.3333333333333,767.5000000000001" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;(color: &quot;red&quot;)[“$playerName and I went to the water line today. It’s thankfully still pumping relatively clean water.”] says Parker, as no one else had anything to add.
+(align: &quot;=&gt;&lt;=&quot;)[[[Return to Title-&gt;Title]]]</tw-passagedata><tw-passagedata pid="77" name="interlude" tags="Home" position="1213,617" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;Having finished all tasks, you and the others sit out on the roof of the MARTA station, eating and drinking the fruits of your labor from the day. In an effort to normalize the world that you all now live in, your group makes sure to talk about everything good or uplifting that happened in a day. You originally were the one who thought of this so that it felt more like living rather than [[surviving.-&gt;interlude2]]
+&lt;/p&gt;(set: $meet1 to 1)</tw-passagedata><tw-passagedata pid="78" name="interlude2" tags="Home" position="1213,767" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;(color: &quot;red&quot;)[“$playerName and I went to the water line today. It’s thankfully still pumping relatively clean water.”] says Parker, as no one else had anything to add.
 
 Following Parker’s comment, there are several silent minutes. There has been something in the air for weeks now, and everyone has felt it. Inevitability. Never knowing what resource run might be your last, or whether you might just be killed in your sleep.
 
 [[Say what everyone is thinking]]
-[[Try to lighten the mood]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="79" name="Say what everyone is thinking" tags="Home" position="1148.3333333333333,909.1666666666667" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;“How much longer can we go on like this?” you ask. Scarlett gets up and leaves, as she cannot discuss this after the experience she had that day at Atlantic Station.
+[[Try to lighten the mood]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="79" name="Say what everyone is thinking" tags="Home" position="1148,909" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;“How much longer can we go on like this?” you ask. Scarlett gets up and leaves, as she cannot discuss this after the experience she had that day at Atlantic Station.
 
 (color: &quot;red&quot;)[“As long as we have to.”] replies Parker. 
 
-Exhausted and feeling like the weight of the world is on your shoulders, you [[head inside.-&gt;TaskPage]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="80" name="Try to lighten the mood" tags="Home" position="1288.3333333333333,907.5000000000001" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;Seeing the gloominess of the room, you decide to crack a joke in hopes of cheering everyone up. 
+Exhausted and feeling like the weight of the world is on your shoulders, you [[head inside.-&gt;TaskPage]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="80" name="Try to lighten the mood" tags="Home" position="1288,907" size="100,100">&lt;p style=&quot;background-color:rgba(0,0,0,0.8)&quot;&gt;Seeing the gloominess of the room, you decide to crack a joke in hopes of cheering everyone up. 
 
 Everyone is staring off into the distance with blank expressions as you begin…
 
